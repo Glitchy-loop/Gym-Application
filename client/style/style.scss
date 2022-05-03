@@ -1,0 +1,106 @@
+$border-radius: .5rem;
+$border: 1px solid grey;
+
+html {
+    font-family: 'Exo 2', sans-serif;
+}
+
+header {
+    width: 40rem;
+    margin:0 auto;
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding:1rem;
+
+        a {
+            padding:.5rem 1rem;
+            text-decoration: none;
+            color:#000;
+            border:$border;
+            margin: 0 .5rem;
+        }
+    }
+}
+
+.container {
+    width: 40rem;
+    margin:0 auto;
+    border:$border;
+    padding:0 2rem;
+
+    
+    h2,h3 {
+        text-align: center;
+    }
+    
+    form {
+        border-radius: $border;
+        width: 20rem;
+        display:flex;
+        flex-direction: column;
+        margin:0 auto;
+    }
+
+    .otherOption {
+        width: 20rem;
+        margin:0 auto;
+        padding:1rem 0;
+
+        a {
+            padding:.5rem 1rem;
+            text-decoration: none;
+            color:#000;
+            border:$border;
+            margin: 0 .5rem;
+        }
+    }
+
+    table {
+        width: 100%;
+        margin:0 auto;
+    }
+
+    .exercises {
+        max-height:50rem;
+        overflow-y: auto;
+        margin:0 auto;
+        padding:0 2rem;
+        
+        .exercise {
+            padding:1rem 1.5rem;
+            border:$border;
+            border-radius: $border-radius;
+            margin: 1rem 0;
+            transition:250ms;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+
+            .exercise-title {
+
+                &::before {
+                    content:'title:';
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-right:.5rem;
+                }
+            }
+
+            .exercise-description {
+                padding-top:.5rem;
+
+                &::before {
+                    content:'description:';
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-right:.5rem;
+                }
+            }
+        }
+    }
+}
