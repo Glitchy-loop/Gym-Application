@@ -19,6 +19,7 @@ const loginUser = async userData => {
     body: JSON.stringify(userData)
   })
   const data = await res.json()
+  console.log(data)
 
   if (data.err) {
     return alert(data.err)
@@ -29,5 +30,6 @@ const loginUser = async userData => {
   }
 
   localStorage.setItem('token', data.token)
+  localStorage.setItem('accountName', data.data[0].name)
   location.replace('dashboard.html')
 }

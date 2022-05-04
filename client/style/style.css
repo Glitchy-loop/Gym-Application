@@ -29,16 +29,33 @@ header nav a {
 .container {
   width: 40rem;
   margin: 0 auto;
-  border: 1px solid grey;
   padding: 0 2rem;
+  -webkit-animation: fadeIn 750ms forwards;
+          animation: fadeIn 750ms forwards;
+}
+
+.container #addNewExerciseBtn, .container #addNewSetBtn {
+  border: 1px solid grey;
+  width: 10rem;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.container #addNewExerciseBtn:hover, .container #addNewSetBtn:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .container h2, .container h3 {
   text-align: center;
 }
 
+.container h3 a {
+  text-decoration: none;
+  color: orange;
+}
+
 .container form {
-  border-radius: 1px solid grey;
   width: 20rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,6 +65,9 @@ header nav a {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0 auto;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  opacity: 1;
 }
 
 .container .otherOption {
@@ -77,7 +97,6 @@ header nav a {
 }
 
 .container .exercises {
-  max-height: 50rem;
   overflow-y: auto;
   margin: 0 auto;
   padding: 0 2rem;
@@ -114,5 +133,38 @@ header nav a {
   text-transform: uppercase;
   font-weight: 600;
   margin-right: .5rem;
+}
+
+.fold {
+  height: 30rem;
+  overflow-x: auto;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.fold:hover {
+  height: 50rem;
+}
+
+.hide {
+  opacity: 0 !important;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

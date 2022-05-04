@@ -28,20 +28,37 @@ header {
 .container {
     width: 40rem;
     margin:0 auto;
-    border:$border;
     padding:0 2rem;
+    animation:fadeIn 750ms forwards;
 
-    
+    #addNewExerciseBtn, #addNewSetBtn {
+        border:$border;
+        width: 10rem;
+        margin: 1rem auto;
+        padding:1rem;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
     h2,h3 {
         text-align: center;
     }
     
+    h3 a {
+        text-decoration: none;
+        color:orange;
+    }
+
     form {
-        border-radius: $border;
         width: 20rem;
         display:flex;
         flex-direction: column;
         margin:0 auto;
+        transition:500ms;
+        opacity: 1;
     }
 
     .otherOption {
@@ -78,7 +95,6 @@ header {
     }
 
     .exercises {
-        max-height:50rem;
         overflow-y: auto;
         margin:0 auto;
         padding:0 2rem;
@@ -117,4 +133,24 @@ header {
             }
         }
     }
+}
+
+.fold {
+    height: 30rem;
+    overflow-x: auto;
+    transition:500ms;
+
+    &:hover {
+        height:50rem;
+    }
+}
+
+.hide {
+    // display:none !important;
+    opacity: 0 !important;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1}
 }

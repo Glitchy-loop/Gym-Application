@@ -41,4 +41,27 @@ router.get('/title/:title', isLoggedIn, async (req, res) => {
   }
 })
 
+// Add exercise
+router.post('/', isLoggedIn, async (req, res) => {
+  try {
+    const connection = await mysql.createConnection(mysqlConfig)
+    const [data] = await connection.execute(`
+    INSERT INTO exercises (title, description)
+    VALUES (${mysql.escape(req.body.title)}, ${mysql.escape(
+      req.body.description
+    )})
+    `)
+    await connection.end()
+
+    if (!data.affectedRows === 1) {
+      console.log(data)
+      res.status(500).send({ msg: 'Server issue.' })
+    }
+
+    return res.status(200).send({ msg: 'Exercise added succesfully.' })
+  } catch (err) {
+    return res.status(500).send({ msg: 'Server issue.' })
+  }
+})
+
 module.exports = router

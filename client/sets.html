@@ -25,14 +25,15 @@
       <nav>
         <a href="./dashboard.html">Dashboard</a>
         <a href="./exercises.html">Exercises</a>
+        <a id="logout" href="./login.html">Log Out</a>
       </nav>
     </header>
     <div class="container">
       <h2>Exercise:</h2>
     </div>
     <div class="container">
-      <h2>Add set</h2>
-      <form name="addSet">
+      <h2 id="addNewSetBtn">Add set</h2>
+      <form name="addSet" class="hide">
         <label for="weight"
           >Weight
           <input type="number" name="weight" id="weight" required />

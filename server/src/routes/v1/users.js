@@ -6,6 +6,7 @@ const jsonwebtoken = require('jsonwebtoken')
 
 const { mysqlConfig, jwtSecret } = require('../../config')
 const validation = require('../../middleware/validation')
+// const isLoggedIn = require('../../middleware/auth')
 
 const router = express.Router()
 
@@ -30,8 +31,17 @@ const loginSchema = Joi.object({
   password: Joi.string().required()
 })
 
-// Register user
+// Get user's data
+// router.get('/userdata/:', isLoggedIn async (req,res) => {
+//   try {
+//     const connection = await mysql.createConnection(mysqlConfig)
+//     const [data] = await connection.execute(`
+//     SELECT
+//     `)
+//   }
+// })
 
+// Register user
 router.post('/register', validation(registrationSchema), async (req, res) => {
   try {
     const hash = bcrypt.hashSync(req.body.password, 10)
@@ -61,12 +71,11 @@ router.post('/register', validation(registrationSchema), async (req, res) => {
 })
 
 // Login user
-
 router.post('/login', validation(loginSchema), async (req, res) => {
   try {
     const connection = await mysql.createConnection(mysqlConfig)
     const [data] = await connection.execute(`
-    SELECT id, email, password
+    SELECT id, name, email, password
     FROM users
     WHERE email = ${mysql.escape(req.body.email)}
     LIMIT 1
@@ -83,7 +92,7 @@ router.post('/login', validation(loginSchema), async (req, res) => {
 
     const token = jsonwebtoken.sign({ accountId: data[0].id }, jwtSecret)
 
-    res.status(200).send({ msg: 'User successfully logged in', token })
+    res.status(200).send({ msg: 'User successfully logged in', token, data })
   } catch (err) {
     console.log(err)
     return res.status(500).send({ err: 'Server issue...' })

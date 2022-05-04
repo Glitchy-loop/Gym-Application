@@ -1,9 +1,11 @@
 const baseUrl = 'http://localhost:8080/v1'
 const token = localStorage.getItem('token')
 const form = document.forms.addSet
+const logOut = document.getElementById('logout')
+const addNewSetBtn = document.getElementById('addNewSetBtn')
+
 let exercise_title
 
-// Get exercise
 // Get exercise by title
 const getExerciseByTitle = async exerciseTitle => {
   const res = await fetch(`${baseUrl}/exercises/title/${exerciseTitle}`, {
@@ -68,6 +70,11 @@ const postSet = async setData => {
   const data = await res.json()
   // console.log(data)
 
+  if (!token) {
+    console.log(token)
+    location.replace('login.html')
+  }
+
   if (data.err) {
     return alert(data.err)
   }
@@ -75,4 +82,23 @@ const postSet = async setData => {
   if (data.msg === `Successfully added a set`) {
     return location.replace('dashboard.html')
   }
+}
+
+// Toggle addSet form visibility
+addNewSetBtn.addEventListener('click', () => {
+  form.classList.toggle('hide')
+})
+
+// Logout
+logOut.addEventListener('click', () => {
+  localStorage.removeItem('accountName')
+  localStorage.removeItem('token')
+  localStorage.removeItem('exercise')
+  location.replace('login.html')
+})
+
+// If no token found
+if (!token) {
+  console.log(token)
+  location.replace('login.html')
 }

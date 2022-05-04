@@ -25,11 +25,27 @@
       <nav>
         <a href="./dashboard.html">Dashboard</a>
         <a href="./exercises.html">Exercises</a>
+        <a id="logout" href="./login.html">Log Out</a>
       </nav>
     </header>
-    <div class="container">
+    <div class="container fold">
       <h2>Exercises:</h2>
       <div class="exercises"></div>
+    </div>
+    <div class="container">
+      <h3 id="addNewExerciseBtn">Add new exercise</h3>
+      <form name="addExercise" class="hide">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" required />
+        <label for="description">Title</label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <input type="submit" value="Add exercise" />
+      </form>
     </div>
     <!-- JS -->
     <script src="./js/exercises.js"></script>
