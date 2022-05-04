@@ -46,17 +46,19 @@ header nav a {
   text-decoration: underline;
 }
 
-.container h2, .container h3 {
+.container h1, .container h2, .container h3 {
   text-align: center;
 }
 
 .container h3 a {
   text-decoration: none;
-  color: orange;
+  color: #ff9d2c;
 }
 
-.container form {
+.container .otherOption {
   width: 20rem;
+  margin: 0 auto;
+  padding: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,16 +66,9 @@ header nav a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 auto;
-  -webkit-transition: 500ms;
-  transition: 500ms;
-  opacity: 1;
-}
-
-.container .otherOption {
-  width: 20rem;
-  margin: 0 auto;
-  padding: 1rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container .otherOption a {
@@ -82,18 +77,6 @@ header nav a {
   color: #000;
   border: 1px solid grey;
   margin: 0 .5rem;
-}
-
-.container table {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-collapse: collapse;
-}
-
-.container table tbody tr td {
-  padding: 1rem;
-  border: 1px solid grey;
 }
 
 .container .exercises {
@@ -145,6 +128,116 @@ header nav a {
   font-weight: 600;
   margin-right: .5rem;
   font-size: 2rem;
+}
+
+.container .exercise-set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .exercise-set .exercise-set-title {
+  font-size: 1.5rem;
+  padding: .5rem 0;
+}
+
+.container .exercise-set .exercise-set-title::before {
+  content: 'title:';
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: .5rem;
+  font-size: 1.5rem;
+  color: #ff9d2c;
+}
+
+.container .exercise-set .exercise-set-description {
+  font-size: 1.5rem;
+  padding: .5rem 0;
+}
+
+.container .exercise-set .exercise-set-description::before {
+  content: 'description:';
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: .5rem;
+  font-size: 1.5rem;
+  color: #ff9d2c;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #ffd09b;
+}
+
+table tbody tr td {
+  border: 1px solid grey;
+  padding: 1rem;
+}
+
+form {
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  opacity: 1;
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+form h2 {
+  margin-top: 0;
+}
+
+form label {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+form input {
+  padding: .5rem;
+  margin: .5rem 0;
+}
+
+.primary-btn {
+  background-color: #ff9d2c;
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+}
+
+.secondary-btn {
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.secondary-btn:hover {
+  cursor: pointer;
 }
 
 .hide {

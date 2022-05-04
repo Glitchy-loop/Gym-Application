@@ -29,9 +29,10 @@
   </head>
   <body>
     <div class="container">
-      <h2>Login to your account</h2>
+      <h1>Welcome to Gym Application</h1>
       <form name="login">
-        <label for="email">Email</label>
+        <h2>Login to your account</h2>
+        <label for="email">Enter your email:</label>
         <input
           type="email"
           name="email"
@@ -39,7 +40,7 @@
           placeholder="Email"
           required
         />
-        <label for="pass">Password</label>
+        <label for="pass">Enter your password:</label>
         <input
           type="password"
           name="password"
@@ -47,13 +48,13 @@
           placeholder="Password"
           required
         />
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" class="primary-btn" />
       </form>
     </div>
     <div class="container">
       <div class="otherOption">
         <h3>If you don't have an account</h3>
-        <a href="./register.html">Register</a>
+        <a class="secondary-btn" href="./register.html">Register</a>
       </div>
     </div>
     <!-- JS -->

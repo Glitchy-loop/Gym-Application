@@ -59,8 +59,8 @@ const displayExercises = data => {
     const exerciseDiv = document.createElement('div')
     exerciseDiv.className = 'exercise'
 
-    const img = document.createElement('img')
-    img.src = exercise.img
+    const image = document.createElement('img')
+    image.src = exercise.img
 
     const title = document.createElement('div')
     title.className = 'exercise-title'

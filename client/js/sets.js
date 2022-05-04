@@ -28,17 +28,20 @@ const displayExercise = data => {
 
   data.forEach(exercise => {
     const exerciseDiv = document.createElement('div')
-    exerciseDiv.className = 'exercise'
+    exerciseDiv.className = 'exercise-set'
+
+    const image = document.createElement('img')
+    image.src = exercise.img
 
     const title = document.createElement('div')
-    title.className = 'exercise-title'
+    title.className = 'exercise-set-title'
     title.textContent = exercise.title
 
     const description = document.createElement('div')
-    description.className = 'exercise-description'
+    description.className = 'exercise-set-description'
     description.textContent = exercise.description
 
-    exerciseDiv.append(title, description)
+    exerciseDiv.append(image, title, description)
 
     container.append(exerciseDiv)
 
