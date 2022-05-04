@@ -4,6 +4,8 @@ const logOut = document.getElementById('logout')
 const form = document.forms.addExercise
 const addNewExerciseBtn = document.getElementById('addNewExerciseBtn')
 
+let exercisesArray = []
+
 // Get all exercises from database
 const getExercises = async () => {
   const res = await fetch(`${baseUrl}/exercises/`, {
@@ -12,7 +14,7 @@ const getExercises = async () => {
     }
   })
   const data = await res.json()
-  // console.log(data)
+  console.log(data)
   if (data.length > 0) {
     displayExercises(data)
 
@@ -52,21 +54,21 @@ getExercises()
 // Display all exercises
 const displayExercises = data => {
   const exercisesDiv = document.querySelector('.exercises')
-  exercisesDiv.innerHTML = ''
 
   data.forEach(exercise => {
     const exerciseDiv = document.createElement('div')
     exerciseDiv.className = 'exercise'
 
+    const img = document.createElement('img')
+    img.src = exercise.img
+
     const title = document.createElement('div')
     title.className = 'exercise-title'
     title.textContent = exercise.title
 
-    const description = document.createElement('div')
-    description.className = 'exercise-description'
-    description.textContent = exercise.description
+    exerciseDiv.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(${exercise.img})`
 
-    exerciseDiv.append(title, description)
+    exerciseDiv.append(title)
 
     exercisesDiv.append(exerciseDiv)
   })
@@ -76,9 +78,10 @@ const displayExercises = data => {
 form.addEventListener('submit', e => {
   e.preventDefault()
   const title = e.target.elements.title.value.trim()
+  const img = e.target.elements.img.value.trim()
   const description = e.target.elements.description.value.trim()
 
-  addNewExercise({ title, description })
+  addNewExercise({ title, img, description })
 })
 
 // Add new exercise to the database
@@ -95,6 +98,7 @@ const addNewExercise = async exerciseData => {
   // console.log(data)
   if (data.msg === 'Exercise added succesfully.') {
     getExercises()
+    form.classList.add('hide')
   } else {
     alert(data.err)
   }

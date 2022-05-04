@@ -94,54 +94,46 @@ header {
         }
     }
 
+
     .exercises {
-        overflow-y: auto;
         margin:0 auto;
         padding:0 2rem;
+        display:flex;
+        overflow: hidden;
+        display:flex;
+        flex-direction: column;
         
         .exercise {
-            padding:1rem 1.5rem;
             border:$border;
             border-radius: $border-radius;
             margin: 1rem 0;
             transition:250ms;
+            min-width: 25rem;
+            height: 25rem;
+            background-size: cover;
+            background-position: center;
+            color:#fff;
+            background-repeat: no-repeat;
+            display:flex;
+            justify-content: center;
 
             &:hover {
                 cursor: pointer;
-                transform: scale(1.1);
             }
 
             .exercise-title {
+                font-size:2rem;
+                padding:2rem 1rem;
 
                 &::before {
                     content:'title:';
                     text-transform: uppercase;
                     font-weight: 600;
                     margin-right:.5rem;
-                }
-            }
-
-            .exercise-description {
-                padding-top:.5rem;
-
-                &::before {
-                    content:'description:';
-                    text-transform: uppercase;
-                    font-weight: 600;
-                    margin-right:.5rem;
+                    font-size:2rem;
                 }
             }
         }
-    }
-}
-
-.fold {
-    height: 30rem;
-    overflow-x: auto;
-    transition:500ms;
-
-    &:hover {
-        height:50rem;
     }
 }
 

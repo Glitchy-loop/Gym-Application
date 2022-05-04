@@ -18,6 +18,13 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
@@ -28,16 +35,18 @@
         <a id="logout" href="./login.html">Log Out</a>
       </nav>
     </header>
-    <div class="container fold">
+    <div class="container">
       <h2>Exercises:</h2>
       <div class="exercises"></div>
     </div>
     <div class="container">
       <h3 id="addNewExerciseBtn">Add new exercise</h3>
       <form name="addExercise" class="hide">
-        <label for="title">Title</label>
+        <label for="title">Exercise title</label>
         <input type="text" name="title" id="title" required />
-        <label for="description">Title</label>
+        <label for="img">Exercise image (URL, max 255 symbols)</label>
+        <input type="text" name="img" id="img" maxlength="255" required />
+        <label for="description">Exercise description</label>
         <textarea
           name="description"
           id="description"

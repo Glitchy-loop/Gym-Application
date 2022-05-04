@@ -97,24 +97,46 @@ header nav a {
 }
 
 .container .exercises {
-  overflow-y: auto;
   margin: 0 auto;
   padding: 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container .exercises .exercise {
-  padding: 1rem 1.5rem;
   border: 1px solid grey;
   border-radius: 0.5rem;
   margin: 1rem 0;
   -webkit-transition: 250ms;
   transition: 250ms;
+  min-width: 25rem;
+  height: 25rem;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container .exercises .exercise:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+}
+
+.container .exercises .exercise .exercise-title {
+  font-size: 2rem;
+  padding: 2rem 1rem;
 }
 
 .container .exercises .exercise .exercise-title::before {
@@ -122,28 +144,7 @@ header nav a {
   text-transform: uppercase;
   font-weight: 600;
   margin-right: .5rem;
-}
-
-.container .exercises .exercise .exercise-description {
-  padding-top: .5rem;
-}
-
-.container .exercises .exercise .exercise-description::before {
-  content: 'description:';
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-right: .5rem;
-}
-
-.fold {
-  height: 30rem;
-  overflow-x: auto;
-  -webkit-transition: 500ms;
-  transition: 500ms;
-}
-
-.fold:hover {
-  height: 50rem;
+  font-size: 2rem;
 }
 
 .hide {

@@ -46,10 +46,10 @@ router.post('/', isLoggedIn, async (req, res) => {
   try {
     const connection = await mysql.createConnection(mysqlConfig)
     const [data] = await connection.execute(`
-    INSERT INTO exercises (title, description)
+    INSERT INTO exercises (title, img, description)
     VALUES (${mysql.escape(req.body.title)}, ${mysql.escape(
-      req.body.description
-    )})
+      req.body.img
+    )}, ${mysql.escape(req.body.description)})
     `)
     await connection.end()
 
