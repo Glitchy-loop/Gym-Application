@@ -2,6 +2,7 @@ const baseUrl = 'http://localhost:8080/v1'
 const token = localStorage.getItem('token')
 const table = document.querySelector('tbody')
 const greetUserSpan = document.getElementById('greet')
+const h3 = document.querySelector('.container h3')
 const logOut = document.getElementById('logout')
 
 // Get all sets
