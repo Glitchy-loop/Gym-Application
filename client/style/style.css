@@ -67,6 +67,13 @@ header nav a {
 .container table {
   width: 100%;
   margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.container table tbody tr td {
+  padding: 1rem;
+  border: 1px solid grey;
 }
 
 .container .exercises {

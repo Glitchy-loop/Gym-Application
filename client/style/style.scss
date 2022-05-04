@@ -61,6 +61,20 @@ header {
     table {
         width: 100%;
         margin:0 auto;
+        text-align: center;
+        border-collapse:collapse; 
+        
+        tbody {
+            
+            tr {
+                
+                
+                td {
+                    padding:1rem;
+                    border:$border;
+                }
+            }
+        }
     }
 
     .exercises {
