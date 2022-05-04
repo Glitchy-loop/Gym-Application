@@ -18,6 +18,9 @@ const getData = async () => {
   if (data.length === 0) {
     h3.innerHTML = `You have no sets. <a href="/client/exercises.html"> Go excercise!</a>`
   }
+  if (data.length > 0) {
+    h3.textContent = 'Here is the list of your sets:'
+  }
 
   displaySets(data)
 }
