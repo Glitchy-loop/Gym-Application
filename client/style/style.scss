@@ -35,10 +35,9 @@ header {
     animation:fadeIn 750ms forwards;
 
     #addNewExerciseBtn, #addNewSetBtn {
-        border:$border;
         width: 10rem;
-        margin: 1rem auto;
         padding:1rem;
+        margin:1rem auto;
 
         &:hover {
             cursor: pointer;
@@ -76,9 +75,10 @@ header {
         margin:0 auto;
         padding:0 2rem;
         display:flex;
-        overflow: hidden;
         display:flex;
         flex-direction: column;
+        // height: 50rem;
+        // overflow-y: auto;
         
         .exercise {
             border:$border;
@@ -86,7 +86,7 @@ header {
             margin: 1rem 0;
             transition:250ms;
             min-width: 25rem;
-            height: 25rem;
+            min-height: 10rem;
             background-size: cover;
             background-position: center;
             color:#fff;
@@ -96,6 +96,8 @@ header {
 
             &:hover {
                 cursor: pointer;
+                transform: scale(1.05);
+                min-height: 25rem;
             }
 
             .exercise-title {

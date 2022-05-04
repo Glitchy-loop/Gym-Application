@@ -35,10 +35,9 @@ header nav a {
 }
 
 .container #addNewExerciseBtn, .container #addNewSetBtn {
-  border: 1px solid grey;
   width: 10rem;
-  margin: 1rem auto;
   padding: 1rem;
+  margin: 1rem auto;
 }
 
 .container #addNewExerciseBtn:hover, .container #addNewSetBtn:hover {
@@ -85,7 +84,6 @@ header nav a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -100,7 +98,7 @@ header nav a {
   -webkit-transition: 250ms;
   transition: 250ms;
   min-width: 25rem;
-  height: 25rem;
+  min-height: 10rem;
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -115,6 +113,9 @@ header nav a {
 
 .container .exercises .exercise:hover {
   cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  min-height: 25rem;
 }
 
 .container .exercises .exercise .exercise-title {
