@@ -225,6 +225,7 @@ form input {
   border: 1px solid grey;
   border-radius: 0.5rem;
   margin-top: 1rem;
+  color: #fff;
 }
 
 .primary-btn:hover {
