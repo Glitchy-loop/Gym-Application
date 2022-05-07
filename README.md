@@ -1,6 +1,6 @@
-# The largest heading
-Test largest
+# Smart Gym Application
+text
 ## The second largest heading
-test second largest
+text
 ###### The smallest heading
-small
+text
